@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kent Cup Finals Day 2026 — Beccehamian RFC</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            maroon: {
+              DEFAULT: '#800000',
+              dark: '#600000',
+              light: '#a00000',
+            },
+            navy: {
+              DEFAULT: '#0a1f44',
+              dark: '#071530',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    .section-card {
+      background: #fff;
+      border-radius: 1rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.04);
+      border: 1px solid #f1f5f9;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.65rem;
+      border-radius: 999px;
+    }
+    .nav-link {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.65rem 0.875rem;
+      border-radius: 0.625rem;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #334155;
+      text-decoration: none;
+      transition: background 0.15s, color 0.15s, border-color 0.15s;
+    }
+    .nav-link:hover, .nav-link:active {
+      background: #800000;
+      color: white;
+      border-color: #800000;
+    }
+    #nav-drawer {
+      display: none;
+    }
+    #nav-drawer.open {
+      display: block;
+    }
+    #nav-toggle .icon-open  { display: block; }
+    #nav-toggle .icon-close { display: none;  }
+    #nav-toggle.open .icon-open  { display: none;  }
+    #nav-toggle.open .icon-close { display: block; }
+  </style>
+</head>
+<body class="bg-slate-50 font-sans text-slate-800 antialiased">
+
+  <!-- ═══════════════════════════════════════════
+       HEADER
+  ════════════════════════════════════════════ -->
+  <header class="bg-maroon text-white">
+    <!-- Main header -->
+    <div class="max-w-2xl mx-auto px-4 py-8 text-center">
+      <!-- Dual logos -->
+      <div class="flex items-center justify-center gap-5 mb-6">
+        <a href="https://www.kent-rugby.org" target="_blank" rel="noopener noreferrer" class="shrink-0">
+          <img src="https://i.ibb.co/ZRwGtTNd/kent-rfu-logo-1.png" alt="Kent RFU" class="h-20 w-auto drop-shadow-lg" />
+        </a>
+        <div class="w-px h-16 bg-white/20"></div>
+        <a href="https://www.pitchero.com/clubs/beccehamianrfc/" target="_blank" rel="noopener noreferrer" class="shrink-0">
+          <img src="https://i.ibb.co/5xf45wFm/Club-logo.jpg" alt="Beccehamian RFC" class="h-20 w-auto rounded-full ring-4 ring-white/20 shadow-xl" />
+        </a>
+      </div>
+      <p class="text-amber-300 text-xs font-bold uppercase tracking-widest mb-2">Kent RFU · Hosted by Beccehamian RFC</p>
+      <h1 class="text-3xl sm:text-4xl font-black leading-tight mb-2">Kent Cup<br/>Finals Day 2026</h1>
+      <p class="text-amber-300 text-lg font-bold mb-6 tracking-wide">Under 16s &amp; Under 18s Girls</p>
+      <div class="flex flex-wrap justify-center gap-3 text-sm">
+        <div class="bg-white/10 rounded-lg px-4 py-2 backdrop-blur-sm">
+          <span class="block text-white/60 text-xs uppercase tracking-wide">Date</span>
+          <span class="font-bold">Sunday 26 April 2026</span>
+        </div>
+        <div class="bg-white/10 rounded-lg px-4 py-2 backdrop-blur-sm">
+          <span class="block text-white/60 text-xs uppercase tracking-wide">Gates Open</span>
+          <span class="font-bold">08:30</span>
+        </div>
+        <div class="bg-white/10 rounded-lg px-4 py-2 backdrop-blur-sm">
+          <span class="block text-white/60 text-xs uppercase tracking-wide">Entry</span>
+          <span class="font-bold">£5 · Cash / Card</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════
+       STICKY NAV
+  ════════════════════════════════════════════ -->
+  <nav class="sticky top-0 z-50 bg-white border-b border-slate-200 shadow-sm">
+    <!-- Bar -->
+    <div class="max-w-2xl mx-auto px-4 py-3 flex items-center justify-between">
+      <div class="flex items-center gap-2.5">
+        <img src="https://i.ibb.co/5xf45wFm/Club-logo.jpg" alt="Beccehamian RFC" class="h-7 w-7 rounded-full" />
+        <span class="text-sm font-extrabold text-navy tracking-tight">Kent Cup Finals 2026</span>
+      </div>
+      <button id="nav-toggle" aria-label="Open navigation menu" aria-expanded="false"
+              class="p-2 -mr-1.5 rounded-lg text-slate-600 hover:bg-slate-100 transition-colors">
+        <svg class="icon-open w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+        <svg class="icon-close w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
+    <!-- Dropdown drawer -->
+    <div id="nav-drawer" class="border-t border-slate-100 bg-white">
+      <div class="max-w-2xl mx-auto px-4 py-3 grid grid-cols-2 sm:grid-cols-4 gap-2">
+        <a href="#schedule"    class="nav-link">
+          <svg class="w-4 h-4 shrink-0 text-maroon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+          Schedule
+        </a>
+        <a href="#gettinghere" class="nav-link">
+          <svg class="w-4 h-4 shrink-0 text-maroon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          Getting Here
+        </a>
+        <a href="#facilities"  class="nav-link">
+          <svg class="w-4 h-4 shrink-0 text-maroon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+          Facilities
+        </a>
+        <a href="#rules"       class="nav-link">
+          <svg class="w-4 h-4 shrink-0 text-maroon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+          On the Day
+        </a>
+        <a href="#medical"     class="nav-link">
+          <svg class="w-4 h-4 shrink-0 text-maroon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+          Medical
+        </a>
+        <a href="#referees"    class="nav-link">
+          <svg class="w-4 h-4 shrink-0 text-maroon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+          Referees
+        </a>
+        <a href="#contact"     class="nav-link">
+          <svg class="w-4 h-4 shrink-0 text-maroon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+          Contact
+        </a>
+        <a href="#sponsors"    class="nav-link">
+          <svg class="w-4 h-4 shrink-0 text-maroon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/></svg>
+          Sponsors
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════
+       MAIN CONTENT
+  ════════════════════════════════════════════ -->
+  <main class="max-w-2xl mx-auto px-4 py-8 space-y-6">
+
+    <!-- Welcome note -->
+    <div class="section-card p-5 flex gap-4 items-start">
+      <div class="text-2xl mt-0.5">👋</div>
+      <div>
+        <h2 class="font-bold text-base mb-1">Welcome to Sparrows Den</h2>
+        <p class="text-sm text-slate-500 leading-relaxed">
+          Beccehamian RFC is incredibly proud to be hosting this year's Kent Cup Girls U16s and U18s Finals Day. Kent has some of the most incredible girls' rugby in the UK and we will be seeing some truly fantastic matches today. Please enjoy the day and support all teams in the full spirit of rugby.
+        </p>
+      </div>
+    </div>
+
+    <!-- ─── SCHEDULE ─── -->
+    <section id="schedule">
+      <h2 class="text-lg font-black text-slate-900 mb-3 flex items-center gap-2">
+        <svg class="w-5 h-5 text-maroon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+        Schedule
+      </h2>
+      <div class="space-y-3">
+
+        <!-- Pitch 1 -->
+        <div class="section-card overflow-hidden">
+          <div class="bg-navy text-white px-5 py-3 flex items-center justify-between">
+            <span class="font-bold text-sm">Pitch 1 — Main Pitch</span>
+          </div>
+          <div class="divide-y divide-slate-100">
+
+            <div class="flex items-start gap-3 px-5 py-3.5 text-sm">
+              <span class="text-slate-400 font-semibold w-12 shrink-0 pt-0.5">10:00</span>
+              <div class="flex-1">
+                <div class="flex items-center gap-2 flex-wrap">
+                  <span class="badge bg-sky-100 text-sky-700">U16 Plate Final</span>
+                </div>
+                <p class="font-semibold mt-1">Beccs Valley <span class="text-slate-400 font-normal">v</span> West Kent Valkyries</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3 px-5 py-3.5 text-sm">
+              <span class="text-slate-400 font-semibold w-12 shrink-0 pt-0.5">11:30</span>
+              <div class="flex-1">
+                <div class="flex items-center gap-2 flex-wrap">
+                  <span class="badge bg-sky-100 text-sky-700">U16 Cup Final</span>
+                </div>
+                <p class="font-semibold mt-1">Dartfordians <span class="text-slate-400 font-normal">v</span> TJs Academy</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3 px-5 py-3.5 text-sm">
+              <span class="text-slate-400 font-semibold w-12 shrink-0 pt-0.5">13:30</span>
+              <div class="flex-1">
+                <div class="flex items-center gap-2 flex-wrap">
+                  <span class="badge bg-purple-100 text-purple-700">U18 Plate Final</span>
+                </div>
+                <p class="font-semibold mt-1">Ashford/Cobra <span class="text-slate-400 font-normal">v</span> Medway</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3 px-5 py-3.5 text-sm">
+              <span class="text-slate-400 font-semibold w-12 shrink-0 pt-0.5">15:00</span>
+              <div class="flex-1">
+                <div class="flex items-center gap-2 flex-wrap">
+                  <span class="badge bg-purple-100 text-purple-700">U18 Cup Final</span>
+                </div>
+                <p class="font-semibold mt-1">Bass/Darts <span class="text-slate-400 font-normal">v</span> Beccs Valley</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Pitch 2 -->
+        <div class="section-card overflow-hidden">
+          <div class="bg-slate-500 text-white px-5 py-3">
+            <span class="font-bold text-sm">Pitch 2 — Warm-Up &amp; Contingency</span>
+          </div>
+          <div class="px-5 py-4 text-sm text-slate-500">
+            Reserved as a warm-up area for all teams and held as a contingency pitch throughout the day.
+          </div>
+        </div>
+
+        <!-- Pitch 3 -->
+        <div class="section-card overflow-hidden">
+          <div class="bg-navy text-white px-5 py-3">
+            <span class="font-bold text-sm">Pitch 3 — Bowl Games</span>
+          </div>
+          <div class="divide-y divide-slate-100">
+
+            <div class="flex items-start gap-3 px-5 py-3.5 text-sm">
+              <span class="text-slate-400 font-semibold w-12 shrink-0 pt-0.5">10:00</span>
+              <div class="flex-1">
+                <div class="flex items-center gap-2 flex-wrap">
+                  <span class="badge bg-sky-100 text-sky-700">U16 Bowl · Game 1</span>
+                </div>
+                <p class="font-semibold mt-1">Ashford <span class="text-slate-400 font-normal">v</span> Medway</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3 px-5 py-3.5 text-sm">
+              <span class="text-slate-400 font-semibold w-12 shrink-0 pt-0.5">11:05</span>
+              <div class="flex-1">
+                <div class="flex items-center gap-2 flex-wrap">
+                  <span class="badge bg-sky-100 text-sky-700">U16 Bowl · Game 2</span>
+                </div>
+                <p class="font-semibold mt-1">Old Shanterbury <span class="text-slate-400 font-normal">v</span> Loser of Game 1</p>
+                <p class="text-xs text-slate-400 mt-0.5">Old Shanterbury = Old Gravesendians / Sheppey / Canterbury</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3 px-5 py-3.5 text-sm">
+              <span class="text-slate-400 font-semibold w-12 shrink-0 pt-0.5">12:10</span>
+              <div class="flex-1">
+                <div class="flex items-center gap-2 flex-wrap">
+                  <span class="badge bg-sky-100 text-sky-700">U16 Bowl · Game 3</span>
+                </div>
+                <p class="font-semibold mt-1">Old Shanterbury <span class="text-slate-400 font-normal">v</span> Winner of Game 1</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3 px-5 py-3.5 text-sm">
+              <span class="text-slate-400 font-semibold w-12 shrink-0 pt-0.5">13:00</span>
+              <div class="flex-1">
+                <div class="flex items-center gap-2 flex-wrap">
+                  <span class="badge bg-purple-100 text-purple-700">U18 Bowl Final</span>
+                </div>
+                <p class="font-semibold mt-1">Bull-Oaks <span class="text-slate-400 font-normal">v</span> TJs Academy</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Prize giving -->
+        <div class="section-card px-5 py-4 flex items-center gap-4">
+          <div class="text-2xl">🏆</div>
+          <div>
+            <p class="font-semibold text-sm">Prize Giving</p>
+            <p class="text-xs text-slate-500">Following the U18 Cup Final (~16:30). All teams and supporters welcome.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ─── GETTING HERE ─── -->
+    <section id="gettinghere">
+      <h2 class="text-lg font-black text-slate-900 mb-3 flex items-center gap-2">
+        <svg class="w-5 h-5 text-maroon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+        Getting Here
+      </h2>
+      <div class="space-y-3">
+
+        <!-- Venue address + map -->
+        <div class="section-card overflow-hidden">
+          <!-- Map embed -->
+          <div class="w-full h-52 bg-slate-100">
+            <iframe
+              src="https://www.google.com/maps?q=Sparrows+Den,+West+Wickham,+BR4+9HS&output=embed"
+              width="100%"
+              height="100%"
+              style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Sparrows Den map">
+            </iframe>
+          </div>
+          <!-- Address + directions -->
+          <div class="p-5 flex items-start justify-between gap-4">
+            <div>
+              <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Venue</p>
+              <p class="font-bold text-base">Sparrows Den</p>
+              <p class="text-sm text-slate-500">West Wickham, BR4 9HS</p>
+            </div>
+            <a href="https://maps.app.goo.gl/sAsd8mWtGYPS4cja9"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="shrink-0 inline-flex items-center gap-1.5 bg-maroon text-white text-xs font-bold px-4 py-2.5 rounded-lg hover:bg-maroon-dark transition-colors">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              Directions
+            </a>
+          </div>
+        </div>
+
+        <!-- Parking — roadworks alert -->
+        <div class="bg-red-600 text-white rounded-xl p-5 space-y-2">
+          <div class="flex items-center gap-2 mb-1">
+            <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+            <p class="font-black text-sm uppercase tracking-wide">Road Closure — Corkscrew Hill</p>
+          </div>
+          <p class="text-xs leading-relaxed text-red-100">Bromley Council has advised that <strong class="text-white">major roadworks will close Corkscrew Hill at its junction with Addington Road</strong> on the day of the final. Signed diversions will be in place. Please allow extra travel time and follow diversion signage carefully.</p>
+          <p class="text-xs leading-relaxed text-red-200 italic">This section will be updated closer to the event as we receive more detail from Bromley Council.</p>
+        </div>
+
+        <!-- Maps coming soon — prominent callout -->
+        <div class="rounded-xl bg-red-600 text-white p-5">
+          <div class="flex items-center gap-3 mb-2">
+            <svg class="w-6 h-6 shrink-0 text-amber-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/></svg>
+            <p class="font-black text-base">Parking Maps &amp; Diversion Plans</p>
+          </div>
+          <p class="text-sm text-red-100 leading-relaxed mb-3">Detailed parking maps and full diversion route plans will be published on this page as soon as we learn more about the impact of the roadworks which have not yet started. Bookmark this page and check back closer to 26 April.</p>
+          <div class="bg-amber-400 rounded-lg px-4 py-2.5 text-center">
+            <p class="text-xs font-black uppercase tracking-widest text-amber-900">Maps &amp; Diversions — Coming Soon</p>
+          </div>
+        </div>
+
+        <!-- Parking -->
+        <div class="section-card overflow-hidden">
+          <div class="px-5 pt-4 pb-2">
+            <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">Parking Options</p>
+          </div>
+          <div class="divide-y divide-slate-100">
+            <div class="flex gap-4 px-5 py-3">
+              <div class="h-8 w-8 shrink-0 bg-navy text-white rounded-full flex items-center justify-center text-xs font-bold">P1</div>
+              <div>
+                <p class="font-semibold text-sm">Limited On-Street Parking</p>
+                <p class="text-xs text-slate-500 mt-0.5">Available on surrounding roads — observe all road markings, yellow lines, and resident driveways. Very limited spaces, do not rely on this.</p>
+              </div>
+            </div>
+            <div class="flex gap-4 px-5 py-3">
+              <div class="h-8 w-8 shrink-0 bg-slate-400 text-white rounded-full flex items-center justify-center text-xs font-bold">P2</div>
+              <div>
+                <p class="font-semibold text-sm flex items-center gap-2">Croydon RFC Car Park <span class="badge bg-amber-100 text-amber-700">Subject to confirmation</span></p>
+                <p class="text-xs text-slate-500 mt-0.5">135 Addington Road, BR4 9BF · approx. 80 spaces. Short walk across the field. <em>Availability to be confirmed — check back for updates.</em></p>
+              </div>
+            </div>
+            <div class="flex gap-4 px-5 py-3 bg-slate-50">
+              <div class="h-8 w-8 shrink-0 bg-red-100 text-red-600 rounded-full flex items-center justify-center">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636"/></svg>
+              </div>
+              <div>
+                <p class="font-semibold text-sm text-red-700">Beccehamian RFC Car Park — Closed</p>
+                <p class="text-xs text-slate-500 mt-0.5">The club car park is reserved throughout the day for match officials, first aid, and event operations. No public parking.</p>
+              </div>
+            </div>
+          </div>
+          <!-- Warnings -->
+          <div class="mx-4 mb-4 mt-3 space-y-2">
+            <div class="bg-amber-50 border border-amber-200 rounded-lg px-4 py-3 flex gap-3">
+              <svg class="w-4 h-4 text-amber-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+              <p class="text-xs text-amber-800 leading-relaxed"><strong>No parking on grass verges.</strong> Wardens will be operating. Please respect cones and driveways.</p>
+            </div>
+            <div class="bg-blue-50 border border-blue-200 rounded-lg px-4 py-3 flex gap-3">
+              <svg class="w-4 h-4 text-blue-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              <p class="text-xs text-blue-800 leading-relaxed"><strong>Please car share wherever possible.</strong> Parking is very limited and the road closure will reduce access. The more people we can get in fewer cars, the better.</p>
+            </div>
+            <div class="bg-slate-50 border border-slate-200 rounded-lg px-4 py-3 flex gap-3">
+              <svg class="w-4 h-4 text-slate-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/></svg>
+              <p class="text-xs text-slate-700 leading-relaxed"><strong>Bringing a minibus?</strong> Please contact the club in advance so we can allocate appropriate space. Contact <a href="mailto:mccandlesschris@gmail.com" class="text-maroon font-semibold underline">Chris McCandless</a> before the day.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Public transport -->
+        <div class="section-card overflow-hidden">
+          <div class="bg-navy text-white px-5 py-3">
+            <p class="font-bold text-sm">Public Transport</p>
+          </div>
+          <div class="p-5 space-y-4">
+            <p class="text-xs text-slate-500 leading-relaxed">Sparrows Den is well served by train and bus. The nearest stations are listed below — all three have direct bus connections to the ground on the <strong class="text-slate-700">119 bus</strong>, which stops at Sparrows Den on Addington Road.</p>
+            <div class="divide-y divide-slate-100 rounded-lg border border-slate-100 overflow-hidden">
+              <div class="flex items-center gap-4 px-4 py-3">
+                <div class="shrink-0 flex flex-col items-center gap-0.5">
+                  <svg class="w-5 h-5 text-navy" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
+                </div>
+                <div class="flex-1">
+                  <p class="font-semibold text-sm">East Croydon</p>
+                  <p class="text-xs text-slate-500">Major interchange · Thameslink, Southern, Overground</p>
+                </div>
+                <span class="badge bg-maroon text-white shrink-0">119 bus</span>
+              </div>
+              <div class="flex items-center gap-4 px-4 py-3">
+                <div class="shrink-0 flex flex-col items-center gap-0.5">
+                  <svg class="w-5 h-5 text-navy" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
+                </div>
+                <div class="flex-1">
+                  <p class="font-semibold text-sm">Hayes (Kent)</p>
+                  <p class="text-xs text-slate-500">Southeastern · direct from London Bridge &amp; Charing Cross</p>
+                </div>
+                <span class="badge bg-maroon text-white shrink-0">119 bus</span>
+              </div>
+              <div class="flex items-center gap-4 px-4 py-3">
+                <div class="shrink-0 flex flex-col items-center gap-0.5">
+                  <svg class="w-5 h-5 text-navy" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
+                </div>
+                <div class="flex-1">
+                  <p class="font-semibold text-sm">Bromley South</p>
+                  <p class="text-xs text-slate-500">Southeastern · direct from London Victoria &amp; St Pancras</p>
+                </div>
+                <span class="badge bg-maroon text-white shrink-0">119 bus</span>
+              </div>
+            </div>
+            <p class="text-xs text-slate-400">Alight at the <strong class="text-slate-600">Sparrows Den</strong> stop on Addington Road.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ─── FACILITIES ─── -->
+    <section id="facilities">
+      <h2 class="text-lg font-black text-slate-900 mb-3 flex items-center gap-2">
+        <svg class="w-5 h-5 text-maroon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+        Facilities
+      </h2>
+      <div class="section-card divide-y divide-slate-100">
+        <div class="flex items-start gap-4 px-5 py-4">
+          <span class="text-xl mt-0.5">🍔</span>
+          <div>
+            <p class="font-semibold text-sm">Food &amp; Drink</p>
+            <p class="text-xs text-slate-500 mt-0.5">Our bar — with its brand new terrace overlooking the pitches — will be open throughout the day. A great range of food will be served from either the bar or a pitch side catering tent.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 px-5 py-4">
+          <span class="text-xl mt-0.5">💧</span>
+          <div>
+            <p class="font-semibold text-sm">Tap Water</p>
+            <p class="text-xs text-slate-500 mt-0.5">Tap water is available on an external tap on the clubhouse under the scoreboard.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 px-5 py-4">
+          <span class="text-xl mt-0.5">🚻</span>
+          <div>
+            <p class="font-semibold text-sm">Toilets</p>
+            <p class="text-xs text-slate-500 mt-0.5">Toilets are available in the clubhouse. A number of portaloos are also located on site.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 px-5 py-4">
+          <span class="text-xl mt-0.5">🏉</span>
+          <div>
+            <p class="font-semibold text-sm">Changing Rooms</p>
+            <p class="text-xs text-slate-500 mt-0.5">Our brand new changing rooms are available for all players. No team allocations will be made. Please do not leave possessions behind.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 px-5 py-4">
+          <span class="text-xl mt-0.5">⛺</span>
+          <div>
+            <p class="font-semibold text-sm">Gazebos &amp; Shelters</p>
+            <p class="text-xs text-slate-500 mt-0.5">Gazebos are welcome but please monitor wind conditions — Sparrows Den can be exposed. All structures must be pegged and supervised.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 px-5 py-4">
+          <span class="text-xl mt-0.5">🐶</span>
+          <div>
+            <p class="font-semibold text-sm">Dogs</p>
+            <p class="text-xs text-slate-500 mt-0.5">Dogs are welcome but must be kept on leads at all times. Please clean up after your pet.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── ON THE DAY ─── -->
+    <section id="rules">
+      <h2 class="text-lg font-black text-slate-900 mb-3 flex items-center gap-2">
+        <svg class="w-5 h-5 text-maroon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+        On the Day
+      </h2>
+      <div class="space-y-3">
+        <div class="section-card divide-y divide-slate-100">
+          <div class="flex items-start gap-4 px-5 py-4">
+            <span class="text-xl mt-0.5">🎟️</span>
+            <div>
+              <p class="font-semibold text-sm">Spectator Entry</p>
+              <p class="text-xs text-slate-500 mt-0.5">£5 per person, payable on the gate. Cash preferred, card also accepted.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4 px-5 py-4">
+            <span class="text-xl mt-0.5">🕘</span>
+            <div>
+              <p class="font-semibold text-sm">Arrival</p>
+              <p class="text-xs text-slate-500 mt-0.5">Car parks and gates open at 08:30.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4 px-5 py-4">
+            <span class="text-xl mt-0.5">📋</span>
+            <div>
+              <p class="font-semibold text-sm">Team Registration</p>
+              <p class="text-xs text-slate-500 mt-0.5">Please check in at the tournament desk — located in a gazebo next to Pitch 1 — upon arrival. Bring your squad list and confirm your First Aider details.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4 px-5 py-4">
+            <span class="text-xl mt-0.5">📸</span>
+            <div>
+              <p class="font-semibold text-sm">Photography</p>
+              <p class="text-xs text-slate-500 mt-0.5">Professional photography is being provided on the day by <a href="https://dephoto.biz/locations/CT" target="_blank" rel="noopener noreferrer" class="font-semibold text-maroon hover:text-maroon-dark transition-colors">DE Photo</a>. Please be respectful of their work on the day.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── MEDICAL ─── -->
+    <section id="medical">
+      <h2 class="text-lg font-black text-slate-900 mb-3 flex items-center gap-2">
+        <svg class="w-5 h-5 text-maroon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+        Medical &amp; Safety
+      </h2>
+      <div class="space-y-3">
+        <div class="section-card overflow-hidden">
+          <div class="bg-maroon text-white px-5 py-3 flex items-center justify-between">
+            <span class="font-bold text-sm">Event Medical Cover</span>
+            <span class="badge bg-white/20 text-white">On-site all day</span>
+          </div>
+          <div class="p-5">
+            <p class="font-semibold text-sm mb-1">Oak Valley Events (South)</p>
+            <p class="text-xs text-slate-500 leading-relaxed mb-3">Professional event medical provider with qualified First Aiders on-site throughout the day.</p>
+            <a href="https://www.addtoevent.co.uk/suppliers/oak-valley-events-south"
+               target="_blank" rel="noopener noreferrer"
+               class="inline-flex items-center gap-1 text-xs font-semibold text-maroon hover:text-maroon-dark transition-colors">
+              About Oak Valley Events →
+            </a>
+          </div>
+          <div class="mx-4 mb-4 bg-amber-50 border border-amber-200 rounded-lg px-4 py-3 flex gap-3">
+            <svg class="w-4 h-4 text-amber-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+            <p class="text-xs text-amber-800 leading-relaxed"><strong>Each team must supply their own qualified First Aider.</strong> This is a mandatory RFU requirement and must be confirmed at registration. Teams unable to provide one may not be permitted to play.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── REFEREES ─── -->
+    <section id="referees">
+      <h2 class="text-lg font-black text-slate-900 mb-3 flex items-center gap-2">
+        <svg class="w-5 h-5 text-maroon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+        Match Officials
+      </h2>
+      <div class="section-card overflow-hidden">
+        <div class="px-5 pt-5 pb-3">
+          <p class="text-sm text-slate-500 leading-relaxed">Referees for today's finals have been kindly provided by two of England's most respected referee societies. We are very grateful for their support.</p>
+        </div>
+        <div class="divide-y divide-slate-100">
+          <div class="flex items-start gap-4 px-5 py-4">
+            <div class="h-9 w-9 shrink-0 bg-navy text-white rounded-full flex items-center justify-center font-black text-xs">L</div>
+            <div>
+              <p class="font-semibold text-sm">London Society of Rugby Football Union Referees</p>
+              <p class="text-xs text-slate-500 mt-0.5">Founded over 135 years ago, the LSRFUR fields more than 500 qualified referees who officiate over 10,000 games each season across London and beyond.</p>
+              <a href="https://www.londonrugby.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 mt-1.5 text-xs font-semibold text-maroon hover:text-maroon-dark transition-colors">
+                londonrugby.com →
+              </a>
+            </div>
+          </div>
+          <div class="flex items-start gap-4 px-5 py-4">
+            <div class="h-9 w-9 shrink-0 bg-maroon text-white rounded-full flex items-center justify-center font-black text-xs">K</div>
+            <div>
+              <p class="font-semibold text-sm">Kent Society of Rugby Football Union Referees</p>
+              <p class="text-xs text-slate-500 mt-0.5">Established in 1950, the KSRFUR has approximately 166 members providing match officials at all levels of the game across Kent.</p>
+              <a href="https://www.kentrefs.co.uk" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 mt-1.5 text-xs font-semibold text-maroon hover:text-maroon-dark transition-colors">
+                kentrefs.co.uk →
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── CONTACT ─── -->
+    <section id="contact">
+      <h2 class="text-lg font-black text-slate-900 mb-3 flex items-center gap-2">
+        <svg class="w-5 h-5 text-maroon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+        Key Contacts
+      </h2>
+      <div class="section-card p-5">
+        <p class="font-semibold text-sm">Chris McCandless</p>
+        <p class="text-xs text-slate-400 mb-4">Tournament Director</p>
+        <div class="flex gap-2">
+          <a href="tel:+447974394046" class="flex-1 inline-flex items-center justify-center gap-1.5 bg-maroon text-white text-xs font-bold py-3 rounded-lg hover:bg-maroon-dark transition-colors">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            07974 394046
+          </a>
+          <a href="mailto:mccandlesschris@gmail.com" class="flex-1 inline-flex items-center justify-center gap-1.5 bg-slate-100 text-slate-700 text-xs font-bold py-3 rounded-lg hover:bg-slate-200 transition-colors">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            Email
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── SPONSORS ─── -->
+    <section id="sponsors">
+      <h2 class="text-lg font-black text-slate-900 mb-3 flex items-center gap-2">
+        <svg class="w-5 h-5 text-maroon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/></svg>
+        Our Sponsors
+      </h2>
+      <div class="section-card p-5">
+        <p class="text-xs text-slate-400 mb-4">Beccehamian RFC is proud to be supported by these fantastic partners.</p>
+        <div class="grid grid-cols-3 gap-3">
+          <a href="https://acluxe.travel" target="_blank" rel="noopener noreferrer" class="bg-slate-50 rounded-xl p-2 flex items-center justify-center hover:bg-slate-100 transition-colors">
+            <img src="https://images.pitchero.com/club_sponsors/4227/1659620039_large.jpg" alt="AC Luxe Travel" class="h-12 w-full object-contain" loading="lazy" />
+          </a>
+          <a href="https://croydonaccident.co.uk" target="_blank" rel="noopener noreferrer" class="bg-slate-50 rounded-xl p-2 flex items-center justify-center hover:bg-slate-100 transition-colors">
+            <img src="https://images.pitchero.com/club_sponsors/4227/1535656005_large.jpg" alt="Croydon Accident Repair Centre" class="h-12 w-full object-contain" loading="lazy" />
+          </a>
+          <a href="https://ergotechnics.com" target="_blank" rel="noopener noreferrer" class="bg-slate-50 rounded-xl p-2 flex items-center justify-center hover:bg-slate-100 transition-colors">
+            <img src="https://images.pitchero.com/club_sponsors/4227/1663774243_large.jpg" alt="Ergo Technics" class="h-12 w-full object-contain" loading="lazy" />
+          </a>
+          <a href="https://greeneking.co.uk" target="_blank" rel="noopener noreferrer" class="bg-slate-50 rounded-xl p-2 flex items-center justify-center hover:bg-slate-100 transition-colors">
+            <img src="https://images.pitchero.com/club_sponsors/4227/1569400483_large.jpg" alt="Greene King" class="h-12 w-full object-contain" loading="lazy" />
+          </a>
+          <a href="https://howdengroup.com/uk-en" target="_blank" rel="noopener noreferrer" class="bg-slate-50 rounded-xl p-2 flex items-center justify-center hover:bg-slate-100 transition-colors">
+            <img src="https://images.pitchero.com/club_sponsors/4227/1757064563_large.jpg" alt="Howden Insurance" class="h-12 w-full object-contain" loading="lazy" />
+          </a>
+          <a href="https://inaga.co.uk" target="_blank" rel="noopener noreferrer" class="bg-slate-50 rounded-xl p-2 flex items-center justify-center hover:bg-slate-100 transition-colors">
+            <img src="https://images.pitchero.com/club_sponsors/4227/1659620185_large.jpg" alt="Inaga" class="h-12 w-full object-contain" loading="lazy" />
+          </a>
+          <a href="https://medesignandbuild.co.uk" target="_blank" rel="noopener noreferrer" class="bg-slate-50 rounded-xl p-2 flex items-center justify-center hover:bg-slate-100 transition-colors">
+            <img src="https://images.pitchero.com/club_sponsors/4227/1569402394_large.jpg" alt="M&amp;E Design and Build" class="h-12 w-full object-contain" loading="lazy" />
+          </a>
+          <a href="https://maisonmaurice.co.uk" target="_blank" rel="noopener noreferrer" class="bg-slate-50 rounded-xl p-2 flex items-center justify-center hover:bg-slate-100 transition-colors">
+            <img src="https://images.pitchero.com/club_sponsors/4227/1569402539_large.jpg" alt="Maison Maurice" class="h-12 w-full object-contain" loading="lazy" />
+          </a>
+          <a href="https://mounthurst.co.uk" target="_blank" rel="noopener noreferrer" class="bg-slate-50 rounded-xl p-2 flex items-center justify-center hover:bg-slate-100 transition-colors">
+            <img src="https://images.pitchero.com/club_sponsors/4227/1659619621_large.jpg" alt="Mounthurst Tax and Accounting" class="h-12 w-full object-contain" loading="lazy" />
+          </a>
+          <div class="bg-slate-50 rounded-xl p-2 flex items-center justify-center">
+            <img src="https://images.pitchero.com/club_sponsors/4227/1659620361_large.jpg" alt="ODJob" class="h-12 w-full object-contain" loading="lazy" />
+          </div>
+          <a href="https://wickhamdiggersplanthire.co.uk" target="_blank" rel="noopener noreferrer" class="bg-slate-50 rounded-xl p-2 flex items-center justify-center hover:bg-slate-100 transition-colors">
+            <img src="https://images.pitchero.com/club_sponsors/4227/1535655746_large.jpg" alt="Wickham Diggers" class="h-12 w-full object-contain" loading="lazy" />
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center pt-4 pb-8">
+      <a href="https://www.pitchero.com/clubs/beccehamianrfc/" target="_blank" rel="noopener noreferrer">
+        <img src="https://i.ibb.co/5xf45wFm/Club-logo.jpg" alt="Beccehamian RFC" class="h-12 w-auto mx-auto mb-3 rounded-full opacity-80 hover:opacity-100 transition-opacity" />
+      </a>
+      <p class="text-xs text-slate-500 font-semibold">Beccehamian RFC · Est. 1933</p>
+      <p class="text-xs text-slate-400 mt-1">Sparrows Den, West Wickham · Kent Cup Finals Day 2026</p>
+      <a href="https://www.pitchero.com/clubs/beccehamianrfc/" target="_blank" rel="noopener noreferrer"
+         class="inline-flex items-center gap-1.5 mt-3 text-xs font-semibold text-maroon hover:text-maroon-dark transition-colors">
+        Visit the Club Website →
+      </a>
+    </footer>
+
+  </main>
+
+  <script>
+    const toggle = document.getElementById('nav-toggle');
+    const drawer = document.getElementById('nav-drawer');
+
+    toggle.addEventListener('click', () => {
+      const isOpen = drawer.classList.toggle('open');
+      toggle.classList.toggle('open', isOpen);
+      toggle.setAttribute('aria-expanded', isOpen);
+    });
+
+    drawer.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        drawer.classList.remove('open');
+        toggle.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  </script>
+</body>
+</html>
